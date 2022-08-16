@@ -13,5 +13,5 @@ public interface IPiezasService {
 	
 	public Piezas piezaByID(int id); //Leer datos de una pieza READ
 		
-	public void eliminarPieza(int id);// Elimina la pieza DELETE
+	public void deletePieza(int id);// Elimina la pieza DELETE
 }

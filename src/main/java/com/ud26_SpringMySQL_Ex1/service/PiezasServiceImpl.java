@@ -30,7 +30,7 @@ public class PiezasServiceImpl implements IPiezasService{
 	}
 
 	@Override
-	public void eliminarPieza(int id) {
+	public void deletePieza(int id) {
 		iPiezasDao.deleteById(id);
 	}
 	
