@@ -1,0 +1,3 @@
+# UD26_SpringMySQL_EX1
+
+ENDPOINTS
