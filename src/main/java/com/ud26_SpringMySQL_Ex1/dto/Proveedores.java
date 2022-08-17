@@ -20,19 +20,17 @@ public class Proveedores {
 
 	//Atributos de entidad estudiante
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
 	private String id;
 	@Column(name = "nombre")//no hace falta si se llama igual
 	private String nombre;
 	
-	@OneToMany
-    @JoinColumn(name="id")
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "proveedor")
     private List<Suministra> suministra;
 	
 	public Proveedores() {}
 
 	public Proveedores(String id, String nombre, List<Suministra> suministra) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.suministra = suministra;
@@ -54,8 +52,6 @@ public class Proveedores {
 		this.nombre = nombre;
 	}
 
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Suministra")
 	public List<Suministra> getSuministra() {
 		return suministra;
 	}

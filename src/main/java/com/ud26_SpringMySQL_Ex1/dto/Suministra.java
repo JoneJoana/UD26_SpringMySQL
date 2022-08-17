@@ -18,11 +18,11 @@ public class Suministra {
 	private int id;
 	
 	@ManyToOne
-    @JoinColumn(name = "pieza_id")
+    @JoinColumn(name = "pieza")
     Piezas pieza;
  
     @ManyToOne
-    @JoinColumn(name = "proveedor_id")
+    @JoinColumn(name = "proveedor")
     Proveedores proveedor;
 	
 	@Column(name = "precio")//no hace falta si se llama igual
