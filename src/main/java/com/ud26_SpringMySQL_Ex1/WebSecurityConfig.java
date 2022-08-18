@@ -11,10 +11,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer  {
+public class WebSecurityConfig  implements WebMvcConfigurer  {
 
-	@Override
-    protected void configure(HttpSecurity http) throws Exception {
+	protected void configure(HttpSecurity http) throws Exception {
     	http
     	.csrf().disable()
     	.authorizeRequests()
