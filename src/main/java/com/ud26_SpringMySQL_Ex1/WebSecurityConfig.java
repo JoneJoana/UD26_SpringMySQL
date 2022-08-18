@@ -14,14 +14,14 @@ public class WebSecurityConfig {
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
-        .antMatchers("/**").authenticated()
+        .antMatchers("/**").hasRole("admin")
         //.antMatchers(HttpMethod.GET,"/**").authenticated()
         //.antMatchers(HttpMethod.POST,"/**").authenticated()
         //.antMatchers(HttpMethod.PUT, "/**").authenticated()
         //.antMatchers(HttpMethod.DELETE,"/**").hasRole("admin")
-        .antMatchers("/").permitAll()
-        .and().formLogin().permitAll()
-        .and().httpBasic();
+        //.antMatchers("/").permitAll()
+        .and().formLogin();
+        //.and().httpBasic();
     }
 
 }
