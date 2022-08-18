@@ -14,11 +14,12 @@ public class WebSecurityConfig implements WebMvcConfigurer  {
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
-        .antMatchers(HttpMethod.GET,"/**").authenticated()
-        .antMatchers(HttpMethod.POST,"/**").authenticated()
-        .antMatchers(HttpMethod.PUT, "/**").authenticated()
-        .antMatchers(HttpMethod.DELETE,"/**").hasRole("admin")
-        //.antMatchers("/").permitAll()
+        .antMatchers("/**").authenticated()
+        //.antMatchers(HttpMethod.GET,"/**").authenticated()
+        //.antMatchers(HttpMethod.POST,"/**").authenticated()
+        //.antMatchers(HttpMethod.PUT, "/**").authenticated()
+        //.antMatchers(HttpMethod.DELETE,"/**").hasRole("admin")
+        .antMatchers("/").permitAll()
         .and().formLogin().permitAll()
         .and().httpBasic();
     }
