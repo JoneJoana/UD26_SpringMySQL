@@ -9,18 +9,25 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {
+public class WebSecurityConfig implements WebMvcConfigurer  {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
+        .csrf().disable()
         .authorizeRequests()
-        .antMatchers(HttpMethod.GET,"/**").hasRole("admin")
-        .antMatchers(HttpMethod.POST,"/**").hasRole("admin")
-        .antMatchers(HttpMethod.PUT, "/**").hasRole("admin")
-        .antMatchers(HttpMethod.DELETE,"/**").hasRole("admin")
-        .antMatchers("/").permitAll()
-        .and().formLogin()
+        .antMatchers(HttpMethod.OPTIONS, "/").authenticated()
+        .antMatchers(HttpMethod.GET,"/").authenticated()
+        .antMatchers(HttpMethod.POST,"/").authenticated()
+        .antMatchers(HttpMethod.PUT, "/").authenticated()
+        .antMatchers(HttpMethod.DELETE,"/").hasRole("admin")
+        .anyRequest().authenticated()
+        .and().formLogin().permitAll()
         .and().httpBasic();
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/").allowedMethods("*");
     }
 
 }
