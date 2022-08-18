@@ -13,14 +13,12 @@ public class WebSecurityConfig implements WebMvcConfigurer  {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
-        .csrf().disable()
         .authorizeRequests()
-        .antMatchers(HttpMethod.OPTIONS,"/").authenticated()
-        .antMatchers(HttpMethod.GET,"/").authenticated()
-        .antMatchers(HttpMethod.POST,"/").authenticated()
-        .antMatchers(HttpMethod.PUT, "/").authenticated()
-        .antMatchers(HttpMethod.DELETE,"/").hasRole("admin")
-        .anyRequest().authenticated()
+        .antMatchers(HttpMethod.GET,"/**").authenticated()
+        .antMatchers(HttpMethod.POST,"/**").authenticated()
+        .antMatchers(HttpMethod.PUT, "/**").authenticated()
+        .antMatchers(HttpMethod.DELETE,"/**").hasRole("admin")
+        //.antMatchers("/").permitAll()
         .and().formLogin().permitAll()
         .and().httpBasic();
     }
