@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig implements WebMvcConfigurer  {
+public class WebSecurityConfig {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -22,11 +22,6 @@ public class WebSecurityConfig implements WebMvcConfigurer  {
         .antMatchers("/").permitAll()
         .and().formLogin().permitAll()
         .and().httpBasic();
-    }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-    	registry.addMapping("*").allowedOrigins("*").allowedMethods("*");
     }
 
 }
