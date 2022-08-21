@@ -27,7 +27,7 @@ public class ProveedoresServiceImpl implements IProveedoresService{
 
 	@Override
 	public Proveedores proveedorByID(String id) {
-		return iProveedoresDAO.findById(id).get();
+		return iProveedoresDAO.findById(id).orElse(null);
 	}
 
 	@Override

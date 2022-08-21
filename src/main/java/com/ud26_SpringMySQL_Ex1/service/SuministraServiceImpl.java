@@ -26,7 +26,7 @@ public class SuministraServiceImpl implements ISuministraService{
 
 	@Override
 	public Suministra suministroByID(int id) {
-		return iSuministraDao.findById(id).get();
+		return iSuministraDao.findById(id).orElse(null);
 	}
 
 	@Override
