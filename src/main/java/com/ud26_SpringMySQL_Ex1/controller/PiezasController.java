@@ -42,8 +42,7 @@ public class PiezasController {
 	@PutMapping("/piezas/{id}")
 	public Piezas actualizarPieza(@PathVariable(name="id")int id,@RequestBody Piezas piezas) {
 		
-		Piezas pieza_selec= new Piezas();
-		pieza_selec= piezasServiceImple.piezaByID(id);
+		Piezas pieza_selec=piezasServiceImple.piezaByID(id);
 		
 		pieza_selec.setNombre(piezas.getNombre());
 		pieza_selec.setSuministra(piezas.getSuministra());

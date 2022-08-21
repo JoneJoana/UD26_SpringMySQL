@@ -29,37 +29,26 @@ public class SuministraController {
 	
 	
 	@PostMapping("/suministra")
-	public Suministra salvarRegistroCurso(@RequestBody Suministra suministro) {		
+	public Suministra salvarSuministra(@RequestBody Suministra suministro) {		
 		return suministraServImpl.saveSuministro(suministro);
 	}
 	
 	
 	@GetMapping("/suministra/{id}")
 	public Suministra suministrByID(@PathVariable(name="id") int id) {
-		
-		Suministra RegistroCurso_xid= new Suministra();
-		
-		RegistroCurso_xid=suministraServImpl.suministroByID(id);
-				
-		return RegistroCurso_xid;
+		return suministraServImpl.suministroByID(id);
 	}
 	
 	@PutMapping("/suministra/{id}")
 	public Suministra actualizarSuministro(@PathVariable(name="id")int id,@RequestBody Suministra suministro) {
 		
-		Suministra Sumi_selec= new Suministra();
-		Suministra sumi_actualizado= new Suministra();
-		
-		Sumi_selec= suministraServImpl.suministroByID(id);
-		
-		
+		Suministra Sumi_selec= suministraServImpl.suministroByID(id);
+				
 		Sumi_selec.setPieza(suministro.getPieza());
 		Sumi_selec.setProveedor(suministro.getProveedor());
 		Sumi_selec.setPrecio(suministro.getPrecio());
 		
-		sumi_actualizado = suministraServImpl.saveSuministro(Sumi_selec);
-		
-		return sumi_actualizado;
+		return suministraServImpl.saveSuministro(Sumi_selec);
 	}
 	
 	@DeleteMapping("/suministra/{id}")

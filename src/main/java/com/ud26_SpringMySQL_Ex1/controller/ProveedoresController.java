@@ -23,7 +23,7 @@ public class ProveedoresController {
 	ProveedoresServiceImpl proveedoresServImpl;
 	
 	@GetMapping("/proveedores")
-	public List<Proveedores> listarCcursos(){
+	public List<Proveedores> listarProveedor(){
 		return proveedoresServImpl.listProveedores();
 	}
 	
@@ -36,28 +36,17 @@ public class ProveedoresController {
 	
 	@GetMapping("/proveedores/{id}")
 	public Proveedores proveedorById(@PathVariable(name="id") String id) {
-		
-		Proveedores proveedor= new Proveedores();
-		
-		proveedor=proveedoresServImpl.proveedorByID(id);
-				
-		return proveedor;
+		return proveedoresServImpl.proveedorByID(id);
 	}
 	
 	@PutMapping("/proveedores/{id}")
 	public Proveedores actualizarProveedor(@PathVariable(name="id")String id,@RequestBody Proveedores proveedor) {
 		
-		Proveedores prov_seleccionado= new Proveedores();
-		Proveedores prov_actualizado= new Proveedores();
-		
-		prov_seleccionado= proveedoresServImpl.proveedorByID(id);
-		
+		Proveedores prov_seleccionado = proveedoresServImpl.proveedorByID(id);		
 		prov_seleccionado.setNombre(proveedor.getNombre());
 		prov_seleccionado.setSuministra(proveedor.getSuministra());
 		
-		prov_actualizado = proveedoresServImpl.saveProveedor(prov_seleccionado);
-		
-		return prov_actualizado;
+		return proveedoresServImpl.saveProveedor(prov_seleccionado);
 	}
 	
 	@DeleteMapping("/proveedores/{id}")
