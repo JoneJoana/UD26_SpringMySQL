@@ -26,7 +26,7 @@ public class PiezasServiceImpl implements IPiezasService{
 
 	@Override
 	public Piezas piezaByID(int id) {
-		return iPiezasDao.findById(id).get();
+		return iPiezasDao.findById(id).orElse(null);
 	}
 
 	@Override

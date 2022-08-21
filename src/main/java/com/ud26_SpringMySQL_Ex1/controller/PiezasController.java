@@ -36,32 +36,19 @@ public class PiezasController {
 	
 	@GetMapping("/piezas/{id}")
 	public Piezas piezaByID(@PathVariable(name="id") int id) {
-		
-		Piezas pieza= new Piezas();
-		
-		pieza= piezasServiceImple.piezaByID(id);
-		
-		System.out.println("Pieza: "+pieza);
-		
-		return pieza;
+		return piezasServiceImple.piezaByID(id);
 	}
 	
 	@PutMapping("/piezas/{id}")
 	public Piezas actualizarPieza(@PathVariable(name="id")int id,@RequestBody Piezas piezas) {
 		
-		Piezas Pieza_selec= new Piezas();
-		Piezas Pieza_actualizado= new Piezas();
+		Piezas pieza_selec= new Piezas();
+		pieza_selec= piezasServiceImple.piezaByID(id);
 		
-		Pieza_selec= piezasServiceImple.piezaByID(id);
+		pieza_selec.setNombre(piezas.getNombre());
+		pieza_selec.setSuministra(piezas.getSuministra());
 		
-		Pieza_selec.setNombre(piezas.getNombre());
-		Pieza_selec.setSuministra(piezas.getSuministra());
-		
-		Pieza_actualizado = piezasServiceImple.savePieza(Pieza_selec);
-		
-		System.out.println("El Curso actualizado es: "+ Pieza_actualizado);
-		
-		return Pieza_actualizado;
+		return piezasServiceImple.savePieza(pieza_selec);
 	}
 	
 	@DeleteMapping("/piezas/{id}")
