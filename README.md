@@ -1,5 +1,16 @@
 # UD26_SpringMySQL_EX1
 
+T26 - DEPLOY HEROKU (SIN BASIC AUTHENTICATION)
+```
+Commits on Aug 18, 2022
+
+nombre commit: create-drop
+
+commit bd0d45ba0c38f95eafbdab649701c6cedd92d0b0
+```
+
+T27 - CON BASIC CONFIG (ultima version)
+
 mysql://bc135e6f8d268c:a982a1ce@eu-cdbr-west-03.cleardb.net/heroku_c1c6ee34f0a13ad
 
 ## API PIEZAS
