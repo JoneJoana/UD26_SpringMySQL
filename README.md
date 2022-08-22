@@ -9,7 +9,8 @@ nombre commit: create-drop
 commit bd0d45ba0c38f95eafbdab649701c6cedd92d0b0
 ```
 
-T27 - CON BASIC CONFIG (ultima version)
+## T27 - CON BASIC CONFIG (ultima version rama main)
+  - CREACION RAMA TOKEN-SECURITY (T27 CN JWT)
 
 mysql://bc135e6f8d268c:a982a1ce@eu-cdbr-west-03.cleardb.net/heroku_c1c6ee34f0a13ad
 
