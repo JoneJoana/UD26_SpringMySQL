@@ -14,62 +14,77 @@ commit bd0d45ba0c38f95eafbdab649701c6cedd92d0b0
 
 mysql://bc135e6f8d268c:a982a1ce@eu-cdbr-west-03.cleardb.net/heroku_c1c6ee34f0a13ad
 
+#### POST LOGIN
+```
+ud27-spring-token.herokuapp.com/login 
+```
+opciones login:
+{
+    "name":"root", 
+    "password":"root"
+}
+
+{
+    "name":"jone", 
+    "password":"1234"
+}
+
 ## API PIEZAS
 
 #### GET
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/piezas/
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/piezas/{id}
+ud27-spring-token.herokuapp.com/api/piezas/
+ud27-spring-token.herokuapp.com/api/piezas/{id}
 ```
 #### POST
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/piezas/
+ud27-spring-token.herokuapp.com/api/piezas/
 ```
 #### PUT
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/piezas/{id}
+ud27-spring-token.herokuapp.com/api/piezas/{id}
 ```
 #### DELETE
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/piezas/{id}
+ud27-spring-token.herokuapp.com/api/piezas/{id}
 ```
 
 ## API PROVEEDORES
 
 #### GET
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/proveedores/
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/proveedores/{id}
+ud27-spring-token.herokuapp.com/api/proveedores/
+ud27-spring-token.herokuapp.com/api/proveedores/{id}
 ```
 #### POST
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/proveedores/
+ud27-spring-token.herokuapp.com/api/proveedores/
 ```
 #### PUT
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/proveedores/{id}
+ud27-spring-token.herokuapp.com/api/proveedores/{id}
 ```
 #### DELETE
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/proveedores/{id}
+ud27-spring-token.herokuapp.com/api/proveedores/{id}
 ```
 
 ## API SUMINISTRA
 
 #### GET
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/suministra/
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/suministra/{id}
+ud27-spring-token.herokuapp.com/api/suministra/
+ud27-spring-token.herokuapp.com/api/suministra/{id}
 ```
 #### POST
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/suministra/
+ud27-spring-token.herokuapp.com/api/suministra/
 ```
 #### PUT
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/suministra/{id}
+ud27-spring-token.herokuapp.com/api/suministra/{id}
 ```
 #### DELETE
 ```
-ud26piezasproveedoresex1-mysql.herokuapp.com/api/suministra/{id}
+ud27-spring-token.herokuapp.com/api/suministra/{id}
 ```
