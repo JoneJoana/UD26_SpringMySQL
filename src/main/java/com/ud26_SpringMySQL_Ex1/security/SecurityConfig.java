@@ -1,4 +1,4 @@
-package com.ud26_SpringMySQL_Ex1;
+package com.ud26_SpringMySQL_Ex1.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
