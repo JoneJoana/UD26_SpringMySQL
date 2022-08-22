@@ -11,6 +11,8 @@ import java.util.Date;
 
 import static java.util.Collections.emptyList;
 
+import java.time.ZonedDateTime;
+
 public class JwtUtil {
 
     // Método para crear el JWT y enviarlo al cliente en el header de la respuesta
@@ -20,7 +22,7 @@ public class JwtUtil {
             .setSubject(username)
 
             // Vamos a asignar un tiempo de expiracion de 1 minuto
-            .setExpiration(new Date(System.currentTimeMillis() + 60000))
+            .setExpiration(Date.from(ZonedDateTime.now().plusMinutes(5).toInstant()))
 
             // Hash con el que firmaremos la clave
             .signWith(SignatureAlgorithm.HS512, "P@tit0")
